@@ -1,0 +1,13 @@
+<div class="container">
+    <form class="form-register" [formGroup]="registerForm" (ngSubmit)="registerUser()">
+        <h3 class="h3 mb-3 font-weight-normal text-center">Register</h3>
+        <div class="form-group">
+            <label>UserName</label>
+            <input type="text" class="form-control" formControlName="uname" placeholder="Enter Username">
+            <br>
+            <label>Password</label>
+            <input type="text" class="form-control" formControlName="pswd" placeholder="Enter Password">
+        </div><br>
+        <button type="submit" class="btn btn-block btn-primary">Register!</button>
+    </form>
+</div>
