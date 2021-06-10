@@ -28,8 +28,12 @@ export class AuthService {
   login(user:User){
     return this._http.post<any>(this.url+"login",user)
     .subscribe((res:any)=>{
-      localStorage.setItem("access-token",res.token);
-      this._router.navigate(['/book']);
+      if (res.msg !== "") {
+        window.alert(res.msg);
+      }else{
+        localStorage.setItem("access-token",res.token);
+        this._router.navigate(['/book']);
+      }
     });
   }
 

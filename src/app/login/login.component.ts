@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   loginForm:FormGroup;
   constructor(private _authService:AuthService,private _router:Router) { 
     this.loginForm=new FormGroup({
-      uname:new FormControl(''),
+      uname:new FormControl('',Validators.required),
       pswd:new FormControl('')
     })
   }
